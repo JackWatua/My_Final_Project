@@ -1,0 +1,84 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+/*Style the top header with welcome message*/
+.header{
+    /*HEADER BACKGROUND COLOR*/
+    background-image: linear-gradient(to right, yellow , blue);
+    /*HEADER HEIGHT*/
+    height: 200px;
+    position: absolute;
+    width: 100%;
+}
+
+.header .btn1{
+    margin-left: 10px;
+}
+ .header .welcome{
+    margin-top: 30px;
+ }
+
+
+ /* This secton styles the services offered and their breif descriptions*/
+
+ .services{
+    position: absolute;
+    width: 100%;
+    top: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+ }
+
+ .services .service {
+    background-color: #26282A;
+    width: 250px;
+    height: 350px;
+    margin: 10px auto;
+ }
+ .services .service .headers :hover{
+    opacity: 0.5;
+ }
+ /*The section below styles headers and icons for each service offered*/
+
+
+ .services .service .headers{
+    color: black;
+    font-weight: bolder;
+    background-color: white;
+    height: 40%;
+    padding: 5px;
+    border-bottom: 1px rgba(255, 255, 255, 0.05) solid;
+ }
+ /*style services icons*/
+
+ .services .service .headers .icon{
+    width: 40px;
+    position: relative;
+    left: 100px;
+ }
+ /*The section below styles the descriptions for each service offerred*/
+ .services .service .description p{
+    margin-top: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
+ }
+ .about-us{
+    border-top: 1px rgba(255, 255, 255, 0.05) solid;
+    background-color: #1B1B1B;
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    bottom: -100px;
+ }
+ .about-us .details{
+    display: flex;
+    margin-top: -5px;
+    justify-content: space-around;
+    flex-direction: row;
+ }
+

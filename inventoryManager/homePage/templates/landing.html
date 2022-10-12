@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <script src="/static/js/bootsrap.min.js"></script>
+    <title>Jb Stores</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="text-lg-center welcome">WELCOME TO JB_LABS</h1>
+        <h4 style="margin-left: 10px;">let's get started</h4>
+        <input type="button" value="Sign Up" class="btn btn-success btn1" onclick="javascript:window.location = '/auth-user/signup';">
+        <input type="button" value="Sign In" class="btn btn-danger btn2" onclick="javascript:window.location = '/auth-user/login';">
+    </div>
+    <div class="services">
+        <div class="service">
+            <div class="headers">
+                <img src="/static/icons/account.svg" alt="service icon" class="imgimg-responsive icon">
+                <p class = "text-center">Track Inventory</p></div>
+            <div class="description"><p class="text-center">{{inventory}}</p></div>
+        </div>
+        <div class="service">
+            <div class="headers">
+                <img src="/static/icons/account.svg" alt="service icon" class="imgimg-responsive icon">
+                <p class = "text-center">Manage Sales</p></div>
+            <div class="description"><p class="text-center">{{sales}}</p></div>
+        </div>
+        <div class="service">
+            <div class="headers">
+                <img src="/static/icons/account.svg" alt="service icon" class="imgimg-responsive icon">
+                <p class = "text-center">Manage Purchases</p></div>
+            <div class="description"><p class="text-center">{{purchases}}</p></div>
+        </div>
+        <div class="service">
+            <div class="headers">
+                <img src="/static/icons/account.svg" alt="service icon" class="imgimg-responsive icon">
+                <p class = "text-center">Track Expenses</p></div>
+            <div class="description"><p class="text-center">{{expenses}}</p></div>
+        </div>
+        <div class="service">
+            <div class="headers">
+                <img src="/static/icons/account.svg" alt="service icon" class="imgimg-responsive icon">
+                <p class = "text-center">Manage Vendors</p></div>
+            <div class="description"><p class="text-center">{{vendors}}</p></div>
+        </div>
+    </div>
+    <div class="about-us">
+        <h3>About US</h3>
+        <div class="details">
+            <div class="contacts">
+                Contacts
+                <ul class="list list-unstyled">
+                    <li>Mobile Phone : 0792650720</li>
+                    <li>Fax : 123453</li>
+                    <li>Email : jbworld@gmail.com</li>
+                </ul>
+            </div>
+            <div class="location">
+                location
+                <ul class="list list-unstyled">
+                    <li><Address>44150 Mamlaka Road</Address></li>
+                    <li>Street : Mamlaka Road</li>
+                    <li>Nairobi</li>
+                    <li>Postal code : 00100</li>
+                </ul>
+            </div>
+            <div class="team">
+                Team
+                <ul class="list list-unstyled">
+                    <li>Jack</li>
+                    <li>Watua</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

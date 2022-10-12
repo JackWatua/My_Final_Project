@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/customers.css">
+    <script src="/static/js/bootsrap.min.js"></script>
+    <script src="/static/js/customers.js"></script>
+    <title>Manage Customers</title>
+</head>
+<body>
+    <div class="container nav navbar">
+        <div class="logo">
+            <h3 class="text-md-center">JB Stores</h3>
+        </div>
+        <ul class="nav-items list-group list-group-horizontal list-unstyled">
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/sales/';" class="text-decoration-none">Sales</li>
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/purchases/';" class="text-decoration-none">Purchases</li>
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/customers/';" class="text-decoration-none">Customers</li>
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/vendors/';" class="text-decoration-none">Vendors</li>
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/expenses/';" class="text-decoration-none">Expenses</li>
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/reports/';" class="text-decoration-none">Reports</li>
+        </ul>
+        <div class="account" onmouseover="toogle_dropdown('dropdown');" onmouseleave="toogle_dropdown('dropdown');">
+            <img src="/static/icons/account.svg" alt="Account" class="img img-responsive img-rounded">
+            <div class="container dropdown" id="dropdown">
+                <ul class="list-unstyled">
+                    <li>Log Out</li>
+                    <li>Notifications</li>
+                    <li>Settings</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content">
+            <table class="table table-stripped table-dark table-responsive table-hover table-sm table-borderless">
+                <thead>
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Full Name</th>
+                        <th>Email Address</th>
+                        <th>Phone</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for customer in Customers %}
+                    <tr>
+                        <td>{{customer.Customer_ID}}</td>
+                        <td>{{customer.Full_Name}}</td>
+                        <td>{{customer.Email_Address}}</td>
+                        <td>{{customer.Phone}}</td>
+                        <td>{{customer.customer_priority}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+
+
+
+
+
+
+
+    <!--The side menu-->
+    <div class="container nav side-menu">
+        <button class="btn btn-success btn-sm" style="width: 200px; display: grid; margin: 5px auto;height: 40px;" onclick="add_contact();">+new customer</button>
+        <div class="container search-form">
+            <form action="" class="form" role="form">
+                {% csrf_token%}
+                {{search_form.as_p}}
+                <button class="btn btn-success btn-dark btn-sm" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="container filter-form">
+            <form action="" role = "form">
+                {% csrf_token%}
+                {{filter_form.as_p}}
+                <button class="btn btn-success btn-dark btn-sm" type="submit">Apply Filter</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

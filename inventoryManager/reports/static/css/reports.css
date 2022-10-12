@@ -1,0 +1,192 @@
+body{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   background-color: #1A1A1A;
+}
+
+.nav{
+   color: white;
+}
+
+.nav ul li a{
+   color: white;
+}
+
+.nav .account{
+   padding: 0px;
+   background-color: red;
+   position: relative;
+   left: -250px;
+   border-radius: 50%;
+}
+
+.nav .account #dropdown{
+   display: none;
+   z-index: 999;
+}
+.nav .account .img{
+   width : 30px;
+}
+.nav .logo h3{
+   font-family: fantasy;
+}
+.nav .account .dropdown{
+   position: absolute;
+   background-color: #000000;
+   margin-left: -50px;
+   width: fit-content;
+   padding: 8px;
+   top: 40px;
+}
+
+
+.nav .account .dropdown ul li{
+   margin: 5px 3px;
+   border-bottom: 2px rgba(255, 255, 255, 0.5) solid;
+}
+
+.nav .list-group{
+   margin-left: -200px;
+}
+.nav .list-group .list-group-item{
+   color: white;
+   background-color: transparent;
+   border-radius: 5px;
+   border: 1px rgba(255, 255, 255, 0.08) solid;
+}
+
+.nav .list-group .list-group-item:hover{
+   background-color: red;
+   color: white;
+}
+
+
+.content{
+   margin-top: 20px;
+   overflow-y: scroll;
+   width: 60rem;
+   height: 72vh;
+   padding: 0;
+   position: relative;
+   left: 50px;
+}
+
+.content .table thead th{
+   position: sticky;
+   top: 0px;
+
+}
+.content .table{
+   border-collapse: collapse;
+   width: 100%;
+}
+
+.content .table thead th,.content .table tbody tr td{
+   text-align: center;
+}
+.content::-webkit-scrollbar{
+   width: 8px;
+}
+.content::-webkit-scrollbar-track{
+   background-color: #000000;
+   border-radius: 8px;
+}
+.content::-webkit-scrollbar-thumb{
+   background-color: red;
+   border-radius: 8px;
+}
+
+/*This section styles the side bar*/
+
+.side-menu{
+   padding-top: 50px;
+   color:  white;
+   background-color: #1c1c1c;
+   width: 230px;
+   border-radius: 7px;
+   height: 72vh;
+   position: absolute;
+   top: 78px;
+   left: 10px;
+   font-size: small;
+   box-shadow: -1px 0px 5px 0px rgba(0,255,255,0.52);
+}
+
+.side-menu .search-form{
+   height: 100px;
+   padding: 5px;
+   box-sizing: border-box;
+   position: absolute;
+   top: 100px;
+}
+.side-menu .search-form .form-control{
+   appearance: none;
+   background-color: transparent;
+   border: 1px rgba(255, 255, 255, 0.08) solid;
+   margin: 0;
+   font-family: inherit;
+   font-size: inherit;
+   cursor: inherit;
+   line-height: inherit;
+   color: white;
+}
+
+.side-menu .search-form .btn, .side-menu .filter-form .btn{
+   display: grid;
+   margin: 7px auto;
+   width: 150px;
+}
+
+.side-menu .filter-form{
+   height: fit-content;
+   padding: 5px;
+   position: absolute;
+   top: 240px;
+}
+
+.side-menu .filter-form select{
+   appearance: none;
+   background-color: transparent;
+   border: 1px rgba(255, 255, 255, 0.08) solid;
+   margin: 0;
+   font-family: inherit;
+   font-size: inherit;
+   cursor: inherit;
+   line-height: inherit;
+   color: white;
+}
+.side-menu .filter-form select::-ms-expand{
+   display: none;
+}
+.side-menu .filter-form select option{
+   background: #1A1A1A;
+}
+
+
+#item{
+   overflow-y: scroll;
+   display: none;
+}
+
+#item .form .btn{
+   display: grid;
+   margin: 10px auto;
+}
+
+
+#item .form .form-control {
+   margin-top: 5px;
+   margin-bottom: 10px;
+}
+
+
+
+.item{
+   width: 60rem;
+   height: 72vh;
+   background-color: white;
+   position: fixed;
+   left: 255px;
+   top: calc(9vh + 20px);
+}

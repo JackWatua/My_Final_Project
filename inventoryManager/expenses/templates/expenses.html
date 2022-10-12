@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/expenses.css">
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/expenses.js"></script>
+    <title>Manage Expenses</title>
+</head>
+<body>
+    <div class="container nav navbar">
+        <div class="logo">
+            <h3 class="text-md-center">JB Stores</h3>
+        </div>
+        <ul class="nav-items list-group list-group-horizontal list-unstyled">
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/sales/';" class="text-decoration-none">Sales</li>
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/purchases/';" class="text-decoration-none">Purchases</li>
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/customers/';" class="text-decoration-none">Customers</li>
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/vendors/';" class="text-decoration-none">Vendors</li>
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/expenses/';" class="text-decoration-none">Expenses</li>
+            <li class="nav-tabs list-group-item list-group-item-light" onclick="javascript:window.location = '/reports/';" class="text-decoration-none">Reports</li>
+        </ul>
+        <div class="account" onmouseover="toogle_dropdown('dropdown');" onmouseleave="toogle_dropdown('dropdown');">
+            <img src="/static/icons/account.svg" alt="Account" class="img img-responsive img-rounded">
+            <div class="container dropdown" id="dropdown">
+                <ul class="list-unstyled">
+                    <li>Log Out</li>
+                    <li>Notifications</li>
+                    <li>Settings</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container content">
+        {% if expenses %}
+            <table class="table table-hover table-responsive-md table-hover table-sm table-dark table-borderless table-responsive">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Details</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {%for expense in expenses%}
+                        <tr>
+                            <td>{{expense.expense_id}}</td>
+                            <td>{{expense.title}}</td>
+                            <td>{{expense.Date}}</td>
+                            <td>{{expense.Amount }}</td>
+                        </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        {%else%}
+            <p style="color:white; margin-left: 350px;">No Expenses Recorded!!</p>
+        {% endif %}
+    </div>
+    <!--The side menu-->
+    <div class="container nav side-menu">
+        <button class="btn btn-success btn-sm" style="width: 200px; display: grid; margin: 5px auto;height: 40px;" onclick="javascript:window.location = '/expenses/new_expense/'">+new expense</button>
+        <div class="container search-form">
+            <form action="" class="form" role="form">
+                <input type="text" class="form-control form-control-sm" placeholder="search expense" name="search" id="search-btn">
+                <button class="btn btn-success btn-dark btn-sm" type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="container filter-form">
+            <form action="" role = "form">
+                <label for="filter">Filter Expenses</label>
+                <select name="filter" id="id_filter" class="form-control form-select form-select-sm">
+                    <option value="1">Amount</option>
+                    <option value="2">Date</option>
+                    <option value="3">Most recent</option>
+                </select>
+                <button class="btn btn-success btn-dark btn-sm" type="submit">Apply Filter</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
